@@ -20,6 +20,10 @@ Cartographer
    :maxdepth: 2
    :hidden:
 
+   configuration
+   evaluation
+   terminology
+
 `Cartographer`_ is a system that provides real-time simultaneous localization
 and mapping (`SLAM`_) in 2D and 3D across multiple platforms and sensor
 configurations.
@@ -27,8 +31,24 @@ configurations.
 .. _Cartographer: https://github.com/googlecartographer/cartographer
 .. _SLAM: https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping
 
+Technical Overview
+==================
+* High level system overview of Cartographer
+
+.. image:: high_level_system_overview.png
+     :target: https://github.com/googlecartographer/cartographer/blob/master/docs/source/high_level_system_overview.png
+
+.. To make modifications, edit the original Google Sketch and export a png.
+.. https://docs.google.com/drawings/d/1kCJ_dEbSvV83THCUfMikCPw7xFrTkrvRw5r6Ji8C90c/edit?usp=sharing
+
+Getting started
+===============
+
+Cartographer is a standalone C++ library. To get started quickly, use our `ROS
+<http://www.ros.org>`_ integration.
+
 Getting started with ROS
-========================
+------------------------
 
 ROS integration is provided by the `Cartographer ROS repository`_. You will find
 complete documentation for using Cartographer with ROS at the
@@ -38,24 +58,47 @@ complete documentation for using Cartographer with ROS at the
 .. _Cartographer ROS Read the Docs site: https://google-cartographer-ros.readthedocs.io
 
 Getting started without ROS
-===========================
+---------------------------
+
+Please see our ROS integration as a starting point for integrating your system
+with the standalone library. Currently, it is the best available reference.
 
 On Ubuntu 14.04 (Trusty):
 
-.. literalinclude:: ../../scripts/install_debs.sh
+.. literalinclude:: ../../scripts/install_debs_cmake.sh
   :language: bash
-  :linenos:
   :lines: 20-
 
 .. literalinclude:: ../../scripts/install_ceres.sh
   :language: bash
-  :linenos:
   :lines: 20-
 
-.. literalinclude:: ../../scripts/install_cartographer.sh
+.. literalinclude:: ../../scripts/install_proto3.sh
   :language: bash
-  :linenos:
   :lines: 20-
+
+.. literalinclude:: ../../scripts/install_cartographer_cmake.sh
+  :language: bash
+  :lines: 20-
+
+.. _system-requirements:
+
+System Requirements
+===================
+
+Although Cartographer may run on other systems, it is confirmed to be working
+on systems that meet the following requirements:
+
+* 64-bit, modern CPU (e.g. 3rd generation i7)
+* 16 GB RAM
+* Ubuntu 14.04 (Trusty) and 16.04 (Xenial)
+* gcc version 4.8.4 and 5.4.0
+
+Known Issues
+------------
+
+* 32-bit builds have libeigen alignment problems which cause crashes and/or
+  memory corruptions.
 
 How to cite us
 ==============

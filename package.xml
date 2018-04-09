@@ -17,7 +17,7 @@
 
 <package format="2">
   <name>cartographer</name>
-  <version>1.0.0</version>
+  <version>0.3.0</version>
   <description>
     Cartographer is a system that provides real-time simultaneous localization
     and mapping (SLAM) in 2D and 3D across multiple platforms and sensor
@@ -37,11 +37,11 @@
   <build_depend>python-sphinx</build_depend>
 
   <depend>boost</depend>
-  <depend>ceres_solver</depend>
+  <depend>ceres-solver</depend>
   <depend>eigen</depend>
+  <depend>libcairo2-dev</depend>
   <depend>libgflags-dev</depend>
   <depend>libgoogle-glog-dev</depend>
-  <depend>libwebp-dev</depend>
   <depend>lua5.2-dev</depend>
   <depend>protobuf-dev</depend>
 
